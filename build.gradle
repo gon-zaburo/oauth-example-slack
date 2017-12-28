@@ -1,0 +1,35 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.9.RELEASE' // Spring Bootのバージョン
+    }
+    repositories {
+        mavenCentral() // Gradle Spring Bootプラグインを取得するリポジトリ(ここではMavenセントラルリポジトリ)
+    }
+    dependencies {
+        // Gradle Spring Bootプラグイン
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+
+// ビルドに必要なライブラリの読み込み
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral() // アプリケーションを実行するのに必要なライブラリの取得先リポジトリ
+}
+
+dependencies {
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
+//    compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '1.0.0.RELEASE'
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.security.oauth:spring-security-oauth2')
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools' //コード更新時にアプリケーションをリロードする
+}
+

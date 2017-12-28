@@ -1,0 +1,12 @@
+security:
+  oauth2:
+    client:
+      clientId: '292205819110.290826779841' # Slackのアプリケーション登録で表示された「Client ID」
+      clientSecret: '0b4f1fa2e5ae59d837343ed79fd0d530' # Slackのアプリケーション登録で表示された「Client Secret」
+      accessTokenUri: 'https://slack.com/api/oauth.access' # Slackを利用する場合の設定値
+      userAuthorizationUri: 'https://slack.com/oauth/authorize' # Slackを利用する場合の設定値
+      authenticationScheme: 'query' # Slackを利用する場合の設定値
+      scope: 'identify' # Slackを利用する場合の設定値
+      tokenName: 'token' # Slackを利用する場合の設定値
+    resource:
+      userInfoUri: 'https://slack.com/api/auth.test' # Slackを利用する場合の設定値
